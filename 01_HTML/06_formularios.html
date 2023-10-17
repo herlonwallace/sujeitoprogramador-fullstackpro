@@ -10,11 +10,36 @@
     <h1>Formulários</h1>
     <form>
         <label for="nome">Primeiro Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="primeiro nome">
+        <input type="text" id="nome" name="nome" placeholder="primeiro nome" required>
         <br><br>
         <label for="ultimoNome">Último nome</label>
-        <input type="text" id="ultimoNome" name="ultimoNome" placeholder="último nome">
+        <input type="text" id="ultimoNome" name="ultimoNome" placeholder="último nome" required>
+        
         <br><br>
+
+        <label>Qual seu nível de conhecimento na programação</label><br>
+        <label>
+            <input type="radio" name="nivel" value="iniciante">Iniciante
+        </label>
+        <label>
+            <input type="radio" name="nivel" value="intermediario">Intermerdiario
+        </label>
+        <label>
+            <input type="radio" name="nivel" value="avancado">Avançado
+        </label>
+        
+        <br><br>
+
+        <label><strong>Sua escolaridade</strong></label>
+        <select>
+            <option value=""></option>
+            <option>Ensino fundamental</option>
+            <option>Ensino médio</option>
+            <option>Ensino superior</option>
+        </select>
+
+        <br><br>
+
         <input type="submit" value="Cadastrar">
     </form>
 </body>
