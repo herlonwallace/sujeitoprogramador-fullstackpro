@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-color: #121212;
+            width: 700px;
+            color: #fff;
+
+            margin: auto;
+            padding: 50px;
+
+            border: 5px solid red;
+            border-radius: 10px;
+        }
+
+        .rede-social h2{
+            text-align: center;
+        }
+
+        .rede-social ul{
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .rede-social li{
+            margin-bottom: 12px;
+        }
+
+        .rede-social a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        .rede-social a:hover{
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Bem vindo ao meu projeto!</h1>
+        <p>Seja bem vindo ao curso de html e css</p>
+    </div>
+
+    <aside class="rede-social">
+        <h2>Me encontre aqui</h2>
+        <ul>
+            <li><a href="https://youtube.com/c/sujeitorprogramador">Youtube</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://sujeitoprogramador.com">Blog</a></li>
+        </ul>
+    </aside>
+
+
+</body>
+
+</html>
