@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align items</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            height: 180vh;
+        }
+
+        .container{
+            background-color: #121212;
+            height: 500px;
+            margin: 50px;
+            display: flex;
+            flex-direction: row;
+            
+            align-items: center;
+            justify-content: center;
+        }
+
+        .area{
+            width: 100px;
+            height: 100px;
+            font-size: 25px;
+        }
+
+        .item-1{
+            background-color: red;
+        }
+
+        .item-2{
+            background-color: yellow;
+            align-self: flex-start;
+        }
+
+        .item-3{
+            background-color: blue;
+            align-self: flex-end;
+        }
+
+        .item-4{
+            background-color: mediumorchid;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="area item-1">1</div>
+        <div class="area item-2">2</div>
+        <div class="area item-3">3</div>
+        <div class="area item-4">4</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Sticky</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            height: 180vh;
+        }
+
+        .container {
+            background-color: #121212;
+            width: 700px;
+            color: #fff;
+            margin: auto;
+            padding: 50px;
+            border: 5px solid red;
+            border-radius: 10px;
+            position: static;
+        }
+
+        header{
+            background-color: cyan;
+            width: 100%;
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>logo</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Contato</a>
+            <a href="#">Sobre</a>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <h1>Bem vindo ao meu prejeto!</h1>
+        <p>Seja bem vindo ao curso de html e css</p>
+    </div>
+
+</body>
+
+</html>

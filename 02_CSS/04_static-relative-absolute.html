@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position static, relative e absolute</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .container{
+            background-color: #121212;
+            width: 700px;
+            color: #fff;
+            margin: auto;
+            padding: 50px;
+            border: 5px solid red;
+            border-radius: 10px;
+            position: static;
+        }
+
+        .area{
+            /* relative: elemento é posicionado em relação a si mesmo. */
+            position: relative;
+            /* top: 150px; */
+            width: 650px;
+            height: 500px;
+            border: 5px solid green;
+        }
+
+        .area-absolute{
+            /* absolute: tem sua posição relacionada a de seu elemento pai. */
+            position: absolute;
+            border: 5px solid blue;    
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Bem vindo ao meu prejeto!</h1>
+        <p>Seja bem vindo ao curso de html e css</p>
+    </div>
+
+    <div class="area">
+        Essa é uma div qualquer.
+        <div class="area-absolute">
+            Esse conteúdo está na div com absolute
+        </div>
+    </div>
+
+</body>
+
+</html>
