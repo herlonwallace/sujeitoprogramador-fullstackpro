@@ -8,6 +8,10 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* HEADER */
 .nav{
     background-color: #181818;
