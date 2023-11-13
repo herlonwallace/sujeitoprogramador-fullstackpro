@@ -39,7 +39,7 @@
 // console.log(busca)
 
 // =========================================================================================
-
+// FILTER
 let palavras = ["Kiko", "Carla", "Tamires", "Kleber", "Ana", "Bia", "Maradona"]
 
 let resultado = palavras.filter((item) => {
