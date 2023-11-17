@@ -13,7 +13,7 @@ function App(){
         if(tarefasStorage) {
             setTarefas(JSON.parse(tarefasStorage))
         }
-    })
+    }, [])
 
     useEffect(() => {
         localStorage.setItem('@tarefa', JSON.stringify(tarefas))
