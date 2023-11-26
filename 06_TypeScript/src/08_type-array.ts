@@ -1,0 +1,7 @@
+
+// Array de String e number, 2 exemplos de declaração
+// let filmes: Array<string | number>
+// let filmes: (string | number)[]
+
+let numeros: number[] = [1, 5, 7, 34, 67]
+console.log(numeros)
