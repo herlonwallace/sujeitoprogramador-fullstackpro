@@ -1,53 +1,76 @@
-import { useState } from 'react'
-
-interface InfoAlunoProps{
-    nome: string;
-    idade: string;
-}
+import { useState } from "react";
 
 export default function App(){
     const [input, setInput] = useState("")
-    const [idade, setIdade] = useState("")
+    const [tasks, setTasks] = useState<string[]>([])
 
-    const [infoAluno, setInfoAluno] = useState<InfoAlunoProps>()
+    const [editTask, setEditTask] = useState({
+      enabled: false,
+      task: ''
+    })
 
-    const [contador, setContador] = useState(0)
-
-    function mostraAluno(){
-        setInfoAluno({
-            nome: input,
-            idade: idade,
-        })
-    }
-
-    function adicionar(){
-        setContador(valorAtual => valorAtual +1)
-    }
-
-    function diminuir(){
-        if(contador === 0){
+    function handleRegister(){
+        if(!input){
+            alert("Preencha o nome da sua tarefa!")
             return
         }
-        setContador(valorAtual => valorAtual -1)
+
+        if(editTask.enabled){
+            handleSaveEdit()
+            return
+        }
+
+        setTasks(tarefas => [...tarefas, input])
+        setInput("")
+    }
+
+    function handleSaveEdit(){
+        const findIndexTask = tasks.findIndex(task => task === editTask.task)
+        const allTasks = [...tasks]
+
+        allTasks[findIndexTask] = input
+        setTasks(allTasks)
+
+        setEditTask({
+            enabled: false,
+            task: ''
+        })
+        setInput("")
+    }
+
+    function handleDelete(item: string){
+        const removerTask = tasks.filter( task => task !== item)
+        setTasks(removerTask)
+    }
+
+    function handleEdit(item: string){
+        setInput(item)
+        setEditTask({
+            enabled: true,
+            task: item
+        })
     }
 
     return(
         <div>
-            <h1>Conhecendo useState</h1>
-
-            <input placeholder="Digite o nome" value={input} onChange={ (e) => setInput(e.target.value)}/>
-            <br /><br />
-            <input placeholder="Digite o nome" value={idade} onChange={ (e) => setIdade(e.target.value)}/>
-            <br /><br />
-            <button onClick={mostraAluno}>Monstrar Aluno</button>
+            <h1>Lista de tarefas</h1>
+            <input 
+                placeholder="Digite o nome da tarefa..."
+                value={input}
+                onChange={ (e) => setInput(e.target.value)}
+            />
+            <button onClick={handleRegister}>
+                {editTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}
+            </button>
             <hr />
-            <h3>Bem vindo: {infoAluno?.nome}</h3>
-            <h2>Idade: {infoAluno?.idade}</h2>
 
-            <hr /><br />
-
-            <h1>Contador com useState</h1>
-            <button onClick={adicionar}>+</button> {contador} <button onClick={diminuir}>-</button>
+            {tasks.map( (item) => (
+                <section key={item}>
+                    <span>{item}</span>
+                    <button onClick={ () => handleEdit(item) }>Editar</button>
+                    <button onClick={ () => handleDelete(item) }>Excluir</button>
+                </section>
+            ))}
         </div>
     )
 }
